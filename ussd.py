@@ -34,8 +34,8 @@ def _save(session_id: str, data: dict):
     r.set(f"ussd:{session_id}", json.dumps(data), ex=SESSION_TTL)
 
 
-def _clear(session_id: str):
-    r.delete(f"ussd:{session_id}")
+#def _clear(session_id: str):
+   # r.delete(f"ussd:{session_id}")
 
 
 @csrf_exempt
