@@ -57,7 +57,7 @@ We must securely pass our API keys and database URL:
 fly secrets set DATABASE_URL="<your-supabase-uri>"
 fly secrets set SECRET_KEY="create-a-long-random-secret-string"
 fly secrets set CORS_ALLOWED_ORIGINS="https://<your-project>.pages.dev"
-fly secrets set DEBUG="False"
+fly secrets set DEBUG="True"
 ```
 
 ### 5. Deploy & Migrate
