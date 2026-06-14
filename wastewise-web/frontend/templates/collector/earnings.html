@@ -1,0 +1,46 @@
+<div class="page" style="padding-bottom:100px;">
+  <div class="header">
+    <div style="font-size:1.5rem;cursor:pointer;" onclick="window.location.hash='#/collector/dashboard'">←</div>
+    <h2 class="font-bold text-lg">Wallet & Earnings</h2>
+    <div style="width:24px;"></div>
+  </div>
+
+  <div class="mt-4 card" style="background:var(--color-primary);color:white;border:none;">
+    <h3 class="text-sm opacity-90">Available Balance</h3>
+    <div class="font-bold mt-2" style="font-size:2.5rem;">₦15,400</div>
+    <button class="btn mt-4" style="background:white;color:var(--color-primary);width:100%;box-shadow: 0 4px 14px rgba(0,0,0,0.1);">Withdraw Funds</button>
+  </div>
+
+  <div class="mt-8">
+    <h3 class="font-bold mb-4">Recent Transactions</h3>
+    <div class="flex-col gap-3">
+      <div class="flex justify-between items-center border-b pb-3" style="border-bottom:1px solid var(--color-border);">
+        <div>
+          <p class="font-bold text-sm">Payout to Bank</p>
+          <p class="text-xs text-muted">Jun 10, 2026</p>
+        </div>
+        <span class="font-bold" style="color:var(--color-text-main);">-₦10,000</span>
+      </div>
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="font-bold text-sm">Job Completion</p>
+          <p class="text-xs text-muted">Today, 11:30 AM</p>
+        </div>
+        <span class="font-bold" style="color:var(--color-success);">+₦765</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div style="position:fixed;bottom:0;left:0;right:0;background:var(--color-surface);display:flex;justify-content:space-around;padding:0.75rem 0 1.5rem 0;box-shadow:0 -4px 15px rgba(0,0,0,0.05);z-index:20;border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;" class="bottom-nav max-w-[480px] mx-auto">
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="window.location.hash='#/collector/dashboard'">
+      <span style="font-size:1.5rem;margin-bottom:2px;">🏠</span> Dash
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-primary);font-weight:600;font-size:0.75rem;cursor:pointer;">
+      <span style="font-size:1.5rem;margin-bottom:2px;">💰</span> Wallet
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="window.location.hash='#/collector/profile'">
+      <span style="font-size:1.5rem;margin-bottom:2px;">👤</span> Profile
+    </div>
+  </div>
+</div>

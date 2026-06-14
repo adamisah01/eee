@@ -1,0 +1,74 @@
+<div class="landing-page" style="width:100%; min-height:100vh; background:white; overflow-x:hidden; display:flex; flex-direction:column;">
+  <!-- Navbar -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; padding:1.25rem 5%; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); position:sticky; top:0; z-index:100; border-bottom:1px solid var(--color-border); box-shadow:var(--shadow-sm);">
+    <div class="flex items-center gap-2">
+      <div style="font-size:2rem;">🌱</div>
+      <span class="font-bold text-xl" style="color:var(--color-primary-dark);letter-spacing:-0.5px;">WasteWise</span>
+    </div>
+    <div style="display:flex;gap:2rem;align-items:center;">
+      <a href="#features" class="font-bold text-muted" style="cursor:pointer;text-decoration:none;">Features</a>
+      <a href="#/admin/dashboard" class="font-bold text-primary" style="cursor:pointer;text-decoration:none;">Super Admin</a>
+    </div>
+    <div class="flex gap-4">
+      <button class="btn btn-outline hidden" style="padding:0.5rem 1.5rem;display:none;@media(min-width:768px){display:block;}" onclick="window.location.hash='#/login'">Login</button>
+      <button class="btn btn-primary" style="padding:0.5rem 1.5rem;box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);" onclick="window.location.hash='#/dashboard'">App</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header style="padding:6rem 5% 8rem 5%; text-align:center; background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); position:relative; overflow:hidden;">
+    <div style="position:relative; z-index:2;">
+      <h1 class="font-bold" style="font-size:clamp(2.5rem, 5vw, 4.5rem); line-height:1.1; color:var(--color-text-main); margin-bottom:1.5rem; max-width:800px; margin-left:auto; margin-right:auto; letter-spacing:-1px;">
+        Smart Waste Collection. <br><span style="color:var(--color-primary);">Pay After Pickup.</span>
+      </h1>
+      <p class="text-muted" style="font-size:clamp(1rem, 2vw, 1.25rem); max-width:600px; margin:0 auto 3rem auto; line-height:1.6;">
+        The most reliable on-demand waste disposal platform in Nigeria. No upfront payments, zero risk. Just tap, collect, and pay.
+      </p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <button class="btn btn-primary" style="font-size:1.1rem; padding:1rem 2.5rem; width:auto; box-shadow: 0 10px 25px rgba(22, 163, 74, 0.4);" onclick="window.location.hash='#/dashboard'">Customer Login</button>
+        <button class="btn btn-outline" style="font-size:1.1rem; padding:1rem 2.5rem; width:auto; background:white;" onclick="window.location.hash='#/collector/dashboard'">Collector Hub</button>
+      </div>
+    </div>
+    
+    <!-- Abstract Shapes -->
+    <div style="position:absolute; top:-10%; left:-5%; width:300px; height:300px; background:var(--color-primary-light); border-radius:50%; opacity:0.5; filter:blur(40px); z-index:1;"></div>
+    <div style="position:absolute; bottom:-10%; right:-5%; width:400px; height:400px; background:#bbf7d0; border-radius:50%; opacity:0.5; filter:blur(60px); z-index:1;"></div>
+  </header>
+
+  <!-- Features -->
+  <section id="features" style="padding:6rem 5%; background:var(--color-background); flex:1;">
+    <div class="text-center mb-12">
+      <h2 class="font-bold text-3xl mb-4" style="letter-spacing:-0.5px;">Why Choose WasteWise?</h2>
+      <p class="text-muted" style="font-size:1.1rem;">Built for convenience, reliability, and trust.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; max-width:1100px; margin:0 auto;">
+      <div class="card" style="padding:2.5rem 2rem; text-align:center; border:none; box-shadow:var(--shadow-md); transition:transform 0.3s; cursor:default;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:3.5rem; margin-bottom:1.5rem;">🛡️</div>
+        <h3 class="font-bold text-xl mb-3">Zero Risk</h3>
+        <p class="text-muted" style="line-height:1.6;">You only pay when your waste has been successfully collected. Your money is always safe.</p>
+      </div>
+      <div class="card" style="padding:2.5rem 2rem; text-align:center; border:none; box-shadow:var(--shadow-md); transition:transform 0.3s; cursor:default;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:3.5rem; margin-bottom:1.5rem;">⚡</div>
+        <h3 class="font-bold text-xl mb-3">On-Demand</h3>
+        <p class="text-muted" style="line-height:1.6;">No more waiting for weeks. Book a pickup in 60 seconds and a collector arrives shortly.</p>
+      </div>
+      <div class="card" style="padding:2.5rem 2rem; text-align:center; border:none; box-shadow:var(--shadow-md); transition:transform 0.3s; cursor:default;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='none'">
+        <div style="font-size:3.5rem; margin-bottom:1.5rem;">📱</div>
+        <h3 class="font-bold text-xl mb-3">No App Required</h3>
+        <p class="text-muted" style="line-height:1.6;">Works instantly in your browser. Install it to your home screen for quick access without taking up storage.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1f2937; color:#f9fafb; padding:4rem 5% 2rem 5%; text-align:center;">
+    <div style="font-size:2rem; margin-bottom:1rem;">🌱</div>
+    <h3 class="font-bold text-xl mb-4">WasteWise</h3>
+    <p style="opacity:0.7; margin-bottom:2rem; font-size:0.875rem;">Transforming waste management in Nigeria.</p>
+    <div style="display:flex; justify-content:center; gap:2rem; margin-bottom:2rem;">
+      <a href="#/admin/dashboard" style="color:#bbf7d0; text-decoration:none; font-weight:600;">Admin Portal</a>
+      <a href="#/login" style="color:#bbf7d0; text-decoration:none; font-weight:600;">Customer Login</a>
+      <a href="#/collector/dashboard" style="color:#bbf7d0; text-decoration:none; font-weight:600;">Collector Hub</a>
+    </div>
+    <p style="opacity:0.5; font-size:0.75rem;">&copy; 2026 WasteWise Inc. All rights reserved.</p>
+  </footer>
+</div>

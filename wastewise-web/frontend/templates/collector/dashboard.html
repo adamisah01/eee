@@ -1,0 +1,64 @@
+<div class="page">
+  <div class="header">
+    <div class="flex items-center gap-2">
+      <div style="font-size:1.5rem;">🚚</div>
+      <h2 class="font-bold text-lg">Collector Hub</h2>
+    </div>
+    <div style="width:40px;height:40px;background:var(--color-background);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);cursor:pointer;font-size:1.2rem;">
+      🔔
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div id="status-card" class="collector-status offline">
+      ⚫ You are Offline
+    </div>
+    <button id="toggle-status-btn" class="btn btn-outline" style="width:100%;">Go Online</button>
+  </div>
+
+  <div class="mt-6">
+    <h3 class="font-bold mb-4">Earnings Summary</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+      <div class="stat-card">
+        <div class="text-muted" style="font-size:0.75rem;">Today</div>
+        <div class="value">₦0</div>
+      </div>
+      <div class="stat-card">
+        <div class="text-muted" style="font-size:0.75rem;">This Week</div>
+        <div class="value">₦15,400</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6" id="job-queue">
+    <h3 class="font-bold mb-4">Incoming Jobs</h3>
+    <div id="no-jobs-msg" class="text-muted text-center card" style="padding:2rem;">Go online to receive jobs</div>
+    
+    <!-- Job Card Template (hidden by default) -->
+    <div id="active-job-card" class="card hidden" style="border-color:var(--color-primary);border-width:2px;animation:slide-up 0.3s forwards;">
+      <div class="flex justify-between items-center mb-2">
+        <span class="badge badge-warning">New Request</span>
+        <span class="font-bold" style="color:var(--color-primary);font-size:1.2rem;">₦765</span>
+      </div>
+      <h4 class="font-bold" style="font-size:1.1rem;">General Waste</h4>
+      <p class="text-muted text-sm mb-4">12 Balogun St, Surulere • 2.1km away</p>
+      <div class="flex gap-2">
+        <button class="btn btn-outline" style="flex:1" onclick="window.declineJob()">Decline</button>
+        <button class="btn btn-primary" style="flex:2" onclick="window.acceptJob()">Accept Job</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div style="position:fixed;bottom:0;left:0;right:0;background:var(--color-surface);display:flex;justify-content:space-around;padding:0.75rem 0 1.5rem 0;box-shadow:0 -4px 15px rgba(0,0,0,0.05);z-index:20;border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;" class="bottom-nav max-w-[480px] mx-auto">
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-primary);font-weight:600;font-size:0.75rem;cursor:pointer;">
+      <span style="font-size:1.5rem;margin-bottom:2px;">🏠</span> Dash
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;">
+      <span style="font-size:1.5rem;margin-bottom:2px;">💰</span> Wallet
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="import('/js/state.js').then(m => m.state.setUser(null, null)); window.location.hash='#/login';">
+      <span style="font-size:1.5rem;margin-bottom:2px;">👤</span> Profile
+    </div>
+  </div>
+</div>

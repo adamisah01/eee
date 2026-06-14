@@ -1,0 +1,117 @@
+<div class="page" style="padding-bottom:100px;">
+  <div class="header" style="justify-content:flex-start;gap:1rem;box-shadow:none;background:transparent;padding:1rem 0;">
+    <div style="font-size:1.5rem;cursor:pointer;width:40px;height:40px;background:var(--color-surface);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);" onclick="history.back()">←</div>
+    <h2 class="font-bold" style="font-size:1.25rem;">New Pickup</h2>
+  </div>
+
+  <!-- Stepper -->
+  <div class="mt-4 flex justify-between items-center px-4" style="padding: 0 1rem; position:relative; margin-bottom: 2rem;">
+    <div style="position:absolute;top:50%;left:2rem;right:2rem;height:3px;background:var(--color-border);z-index:1;border-radius:3px;"></div>
+    <div style="position:absolute;top:50%;left:2rem;width:0%;height:3px;background:var(--color-primary);z-index:2;transition:width 0.4s cubic-bezier(0.4, 0, 0.2, 1);border-radius:3px;" id="stepper-line"></div>
+    
+    <div class="step-indicator active" style="width:28px;height:28px;border-radius:50%;background:var(--color-primary);color:white;display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:bold;z-index:3;box-shadow:0 0 0 4px var(--color-background);">1</div>
+    <div class="step-indicator" id="step2-indicator" style="width:28px;height:28px;border-radius:50%;background:var(--color-border);color:var(--color-text-muted);display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:bold;z-index:3;transition:all 0.4s;box-shadow:0 0 0 4px var(--color-background);">2</div>
+    <div class="step-indicator" id="step3-indicator" style="width:28px;height:28px;border-radius:50%;background:var(--color-border);color:var(--color-text-muted);display:flex;align-items:center;justify-content:center;font-size:0.875rem;font-weight:bold;z-index:3;transition:all 0.4s;box-shadow:0 0 0 4px var(--color-background);">3</div>
+  </div>
+
+  <!-- Form Steps -->
+  <div class="mt-2">
+    
+    <!-- Step 1: Waste Type -->
+    <div id="step-1" class="step-content" style="animation:fade-in 0.3s forwards;">
+      <h3 class="font-bold mb-4" style="font-size:1.1rem;">What are we picking up?</h3>
+      <div class="flex-col gap-4">
+        <label class="card flex justify-between items-center" style="cursor:pointer; border: 2px solid var(--color-primary);background:var(--color-primary-light); transition:all 0.2s;">
+          <div class="flex items-center gap-4">
+            <div style="font-size:2.5rem;">🗑️</div>
+            <div>
+              <div class="font-bold" style="font-size:1rem;">General Household</div>
+              <div class="text-muted" style="font-size:0.875rem;margin-top:0.25rem;">Mixed everyday waste</div>
+            </div>
+          </div>
+          <input type="radio" name="waste_type" value="general" checked style="width:24px;height:24px;accent-color:var(--color-primary);">
+        </label>
+        
+        <label class="card flex justify-between items-center" style="cursor:pointer; border: 2px solid transparent; transition:all 0.2s;">
+          <div class="flex items-center gap-4">
+            <div style="font-size:2.5rem;">♻️</div>
+            <div>
+              <div class="font-bold" style="font-size:1rem;">Recyclable</div>
+              <div class="text-muted" style="font-size:0.875rem;margin-top:0.25rem;">Plastics, cans, paper</div>
+            </div>
+          </div>
+          <input type="radio" name="waste_type" value="recyclable" style="width:24px;height:24px;accent-color:var(--color-primary);">
+        </label>
+      </div>
+      <button class="btn btn-primary mt-8" style="padding:16px;" onclick="window.nextStep(2)">Continue</button>
+    </div>
+
+    <!-- Step 2: Location & Time -->
+    <div id="step-2" class="step-content hidden" style="animation:fade-in 0.3s forwards;">
+      <h3 class="font-bold mb-4" style="font-size:1.1rem;">Where and when?</h3>
+      
+      <div class="input-group">
+        <label class="input-label">Pickup Address</label>
+        <div class="flex gap-2">
+          <input type="text" id="address" class="input-field flex-1" placeholder="Enter street address" value="12 Balogun St, Surulere, Lagos">
+          <button class="btn" style="background:var(--color-primary-light);color:var(--color-primary-dark);width:auto;padding:0 1rem;font-size:1.25rem;" onclick="window.useLocation()">📍</button>
+        </div>
+      </div>
+
+      <div class="input-group mt-4">
+        <label class="input-label">Pickup Time</label>
+        <select class="input-field" id="schedule">
+          <option value="now">Right Now (ASAP)</option>
+          <option value="today">Later Today</option>
+          <option value="tomorrow">Tomorrow Morning</option>
+        </select>
+      </div>
+
+      <div class="input-group mt-4">
+        <label class="input-label">Special Instructions (Optional)</label>
+        <textarea class="input-field" id="notes" rows="3" placeholder="E.g. Call when at the gate"></textarea>
+      </div>
+
+      <div class="flex gap-4 mt-8">
+        <button class="btn btn-outline" style="flex:1;padding:16px;" onclick="window.nextStep(1)">Back</button>
+        <button class="btn btn-primary" style="flex:2;padding:16px;" onclick="window.nextStep(3)">Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Summary -->
+    <div id="step-3" class="step-content hidden" style="animation:fade-in 0.3s forwards;">
+      <h3 class="font-bold mb-4" style="font-size:1.1rem;">Order Summary</h3>
+      
+      <div class="card" style="background:var(--color-surface);padding:1.5rem;border:none;box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+        <div class="flex justify-between mb-3">
+          <span class="text-muted">Waste Type</span>
+          <span class="font-bold" id="summary-type">General Household</span>
+        </div>
+        <div class="flex justify-between mb-3">
+          <span class="text-muted">Schedule</span>
+          <span class="font-bold" id="summary-schedule">Right Now</span>
+        </div>
+        <div class="flex justify-between mb-4">
+          <span class="text-muted">Address</span>
+          <span class="font-bold text-right" style="max-width:60%;" id="summary-address">12 Balogun St, Surulere</span>
+        </div>
+        
+        <hr style="border:none;border-top:1px dashed var(--color-border);margin:1.5rem 0;">
+        
+        <div class="flex justify-between items-center">
+          <span class="font-bold">Estimated Base Price</span>
+          <span class="font-bold text-2xl" style="color:var(--color-primary);">₦500+</span>
+        </div>
+        <div class="text-muted mt-4 text-center" style="font-size:0.875rem;background:#fef3c7;color:#b45309;padding:0.75rem;border-radius:0.5rem;font-weight:600;">
+          💡 You pay ONLY after waste is collected
+        </div>
+      </div>
+
+      <div class="flex gap-4 mt-8">
+        <button class="btn btn-outline" style="flex:1;padding:16px;" onclick="window.nextStep(2)">Back</button>
+        <button id="confirm-btn" class="btn btn-primary" style="flex:2;padding:16px;box-shadow: 0 4px 14px 0 rgba(22, 163, 74, 0.39);" onclick="window.confirmOrder()">Confirm Pickup 🎉</button>
+      </div>
+    </div>
+
+  </div>
+</div>

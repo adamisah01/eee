@@ -1,0 +1,48 @@
+<div class="page" style="padding-bottom:100px;">
+  <div class="header">
+    <div style="font-size:1.5rem;cursor:pointer;" onclick="window.location.hash='#/collector/dashboard'">←</div>
+    <h2 class="font-bold text-lg">Collector Profile</h2>
+    <div style="width:24px;"></div>
+  </div>
+
+  <div class="mt-4 flex items-center gap-4">
+    <div style="width:64px;height:64px;background:var(--color-primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-primary-dark);font-size:32px;">👷🏾‍♂️</div>
+    <div>
+      <h3 class="font-bold text-xl">Emeka</h3>
+      <p class="text-muted">+234 803 987 6543</p>
+      <span class="badge badge-success mt-1">Verified Partner</span>
+    </div>
+  </div>
+
+  <div class="mt-8 flex-col gap-3">
+    <div class="flex justify-between items-center px-4 py-3 bg-surface border rounded-lg card card-interactive cursor-pointer">
+      <span class="font-bold">Vehicle Information</span>
+      <span class="text-muted">→</span>
+    </div>
+    <div class="flex justify-between items-center px-4 py-3 bg-surface border rounded-lg card card-interactive cursor-pointer">
+      <span class="font-bold">Service Areas (LGA)</span>
+      <span class="text-muted">→</span>
+    </div>
+    <div class="flex justify-between items-center px-4 py-3 bg-surface border rounded-lg card card-interactive cursor-pointer">
+      <span class="font-bold">ID & Documents</span>
+      <span class="text-muted">→</span>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <button class="btn btn-outline w-full" style="color:var(--color-error);border-color:var(--color-error);" onclick="import('/js/state.js').then(m => m.state.setUser(null, null)); window.location.hash='#/login';">Go Offline & Log Out</button>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div style="position:fixed;bottom:0;left:0;right:0;background:var(--color-surface);display:flex;justify-content:space-around;padding:0.75rem 0 1.5rem 0;box-shadow:0 -4px 15px rgba(0,0,0,0.05);z-index:20;border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;" class="bottom-nav max-w-[480px] mx-auto">
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="window.location.hash='#/collector/dashboard'">
+      <span style="font-size:1.5rem;margin-bottom:2px;">🏠</span> Dash
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="window.location.hash='#/collector/earnings'">
+      <span style="font-size:1.5rem;margin-bottom:2px;">💰</span> Wallet
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-primary);font-weight:600;font-size:0.75rem;cursor:pointer;">
+      <span style="font-size:1.5rem;margin-bottom:2px;">👤</span> Profile
+    </div>
+  </div>
+</div>

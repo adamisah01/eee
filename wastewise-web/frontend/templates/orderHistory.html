@@ -1,0 +1,53 @@
+<div class="page" style="padding-bottom:100px;">
+  <div class="header">
+    <div style="font-size:1.5rem;cursor:pointer;" onclick="window.location.hash='#/'">←</div>
+    <h2 class="font-bold text-lg">Order History</h2>
+    <div style="width:24px;"></div>
+  </div>
+
+  <div class="mt-4 flex gap-2 overflow-x-auto" style="padding-bottom:1rem; border-bottom:1px solid var(--color-border); margin-left:-1rem; margin-right:-1rem; padding-left:1rem; padding-right:1rem;">
+    <button class="badge badge-success" style="padding:0.5rem 1rem;">All</button>
+    <button class="badge" style="background:var(--color-surface);border:1px solid var(--color-border);padding:0.5rem 1rem;">Active</button>
+    <button class="badge" style="background:var(--color-surface);border:1px solid var(--color-border);padding:0.5rem 1rem;">Paid</button>
+    <button class="badge" style="background:var(--color-surface);border:1px solid var(--color-border);padding:0.5rem 1rem;">Cancelled</button>
+  </div>
+
+  <div class="mt-4 flex-col gap-4">
+    <div class="card card-interactive" style="cursor:pointer;" onclick="window.location.hash='#/order/WW12345678'">
+      <div class="flex justify-between items-center mb-2">
+        <span class="font-bold">WW12345678</span>
+        <span class="badge badge-success">Completed</span>
+      </div>
+      <p class="text-sm text-muted mb-2">12 Balogun St, Surulere</p>
+      <div class="flex justify-between items-center">
+        <span class="text-sm">General Waste</span>
+        <span class="font-bold">₦765</span>
+      </div>
+    </div>
+    
+    <div class="card card-interactive" style="cursor:pointer;" onclick="window.location.hash='#/payment/WW98765432'">
+      <div class="flex justify-between items-center mb-2">
+        <span class="font-bold">WW98765432</span>
+        <span class="badge badge-warning">Payment Pending</span>
+      </div>
+      <p class="text-sm text-muted mb-2">12 Balogun St, Surulere</p>
+      <div class="flex justify-between items-center">
+        <span class="text-sm">General</span>
+        <span class="font-bold text-error" style="color:var(--color-error);">Pay ₦500</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div style="position:fixed;bottom:0;left:0;right:0;background:var(--color-surface);display:flex;justify-content:space-around;padding:0.75rem 0 1.5rem 0;box-shadow:0 -4px 15px rgba(0,0,0,0.05);z-index:20;border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;" class="bottom-nav max-w-[480px] mx-auto">
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="window.location.hash='#/'">
+      <span style="font-size:1.5rem;margin-bottom:2px;">🏠</span> Home
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-primary);font-weight:600;font-size:0.75rem;cursor:pointer;">
+      <span style="font-size:1.5rem;margin-bottom:2px;">📜</span> Orders
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="window.location.hash='#/profile'">
+      <span style="font-size:1.5rem;margin-bottom:2px;">👤</span> Profile
+    </div>
+  </div>
+</div>

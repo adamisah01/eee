@@ -1,0 +1,70 @@
+<div class="page">
+  <div class="header" style="border-radius:1rem;margin-bottom:1rem;">
+    <div class="flex items-center gap-2">
+      <div style="width:36px;height:36px;background:var(--color-primary);border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;font-size:20px;">🌱</div>
+      <div>
+        <h2 class="font-bold" style="font-size:1rem;line-height:1.2;">Good morning, <span id="user-name">Amaka</span> 👋</h2>
+        <p class="text-muted" style="font-size:0.75rem;">Ready to dispose of some waste?</p>
+      </div>
+    </div>
+    <div style="width:40px;height:40px;background:var(--color-background);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm);cursor:pointer;font-size:1.2rem;">
+      🔔
+    </div>
+  </div>
+
+  <div class="mt-2 card" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: white; border: none; padding: 1.5rem; position: relative; overflow: hidden; box-shadow: 0 10px 20px rgba(22, 163, 74, 0.2);">
+    <div style="position:relative; z-index:2;">
+      <h3 class="font-bold mb-2" style="font-size:1.2rem;">Pay After Pickup 💡</h3>
+      <p style="font-size:0.875rem; opacity:0.9; line-height:1.4;">No upfront payments. Zero risk. Pay only when your waste is confirmed collected.</p>
+    </div>
+    <div style="position:absolute; right: -20px; bottom: -20px; font-size: 100px; opacity: 0.15; z-index:1; transform:rotate(-15deg);">🛡️</div>
+  </div>
+
+  <div class="mt-6">
+    <h3 class="font-bold mb-4" style="font-size:1.1rem;">Quick Book</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+      <div class="card card-interactive" style="text-align:center;cursor:pointer;padding:1.5rem 1rem;" onclick="window.location.hash='#/order/new?type=general'">
+        <div style="font-size:2.5rem;margin-bottom:0.75rem;">🗑️</div>
+        <div class="font-bold" style="font-size:0.9rem;">General</div>
+        <div class="text-muted mt-2" style="font-size:0.75rem;">From ₦500</div>
+      </div>
+      <div class="card card-interactive" style="text-align:center;cursor:pointer;padding:1.5rem 1rem;" onclick="window.location.hash='#/order/new?type=recyclable'">
+        <div style="font-size:2.5rem;margin-bottom:0.75rem;">♻️</div>
+        <div class="font-bold" style="font-size:0.9rem;">Recyclable</div>
+        <div class="text-muted mt-2" style="font-size:0.75rem;">Free Pickup</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mt-8 mb-4">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="font-bold" style="font-size:1.1rem;">Recent Orders</h3>
+      <span class="text-primary font-bold" style="font-size:0.875rem;color:var(--color-primary);cursor:pointer;">See All</span>
+    </div>
+    <div id="recent-orders" class="flex-col gap-4">
+      <div class="card flex justify-between items-center card-interactive" style="cursor:pointer;" onclick="window.location.hash='#/track/WW12345678'">
+        <div class="flex items-center gap-4">
+          <div style="font-size:1.5rem;background:#f3f4f6;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;">🗑️</div>
+          <div>
+            <div class="font-bold" style="font-size:0.875rem;">WW12345678</div>
+            <div class="text-muted" style="font-size:0.75rem;">Today, 10:30 AM</div>
+          </div>
+        </div>
+        <span class="badge badge-warning">En Route</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div style="position:fixed;bottom:0;left:0;right:0;background:var(--color-surface);display:flex;justify-content:space-around;padding:0.75rem 0 1.5rem 0;box-shadow:0 -4px 15px rgba(0,0,0,0.05);z-index:20;border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;" class="bottom-nav max-w-[480px] mx-auto">
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-primary);font-weight:600;font-size:0.75rem;cursor:pointer;">
+      <span style="font-size:1.5rem;margin-bottom:2px;">🏠</span> Home
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;">
+      <span style="font-size:1.5rem;margin-bottom:2px;">📜</span> Orders
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;color:var(--color-text-muted);font-weight:600;font-size:0.75rem;cursor:pointer;" onclick="import('/js/state.js').then(m => m.state.setUser(null, null)); window.location.hash='#/login';">
+      <span style="font-size:1.5rem;margin-bottom:2px;">👤</span> Logout
+    </div>
+  </div>
+</div>

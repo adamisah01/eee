@@ -1,0 +1,55 @@
+<div class="page" style="padding-bottom:100px;">
+  <div class="header">
+    <div style="font-size:1.5rem;cursor:pointer;" onclick="history.back()">←</div>
+    <h2 class="font-bold text-lg">Invoice</h2>
+    <div style="width:24px;"></div>
+  </div>
+
+  <div class="mt-4 text-center" id="payment-header">
+    <div style="font-size:3rem;margin-bottom:0.5rem;">🧾</div>
+    <h3 class="font-bold text-xl">Payment Pending</h3>
+    <p class="text-muted" id="timer-display" style="font-size:1.25rem; font-weight:bold; color:var(--color-error); margin-top:0.5rem;">23:59:59</p>
+    <p class="text-sm text-muted">Time remaining to pay</p>
+  </div>
+
+  <div class="mt-6 card" id="receipt-card">
+    <h3 class="font-bold mb-4 pb-2" style="border-bottom:1px solid var(--color-border);">Invoice Breakdown</h3>
+    
+    <div class="flex justify-between mb-3 text-sm">
+      <span class="text-muted">Order ID</span>
+      <span class="font-bold">WW12345678</span>
+    </div>
+    <div class="flex justify-between mb-3 text-sm">
+      <span class="text-muted">Base Charge</span>
+      <span class="font-bold">₦500</span>
+    </div>
+    <div class="flex justify-between mb-3 text-sm">
+      <span class="text-muted">Weight Charge (8.5kg)</span>
+      <span class="font-bold">₦215</span>
+    </div>
+    <div class="flex justify-between mb-4 text-sm">
+      <span class="text-muted">Platform Fee</span>
+      <span class="font-bold">₦50</span>
+    </div>
+    
+    <hr style="border:none;border-top:1px dashed var(--color-border);margin:1.5rem 0;">
+    
+    <div class="flex justify-between items-center">
+      <span class="font-bold text-lg">Total</span>
+      <span class="font-bold text-2xl" style="color:var(--color-primary);">₦765</span>
+    </div>
+  </div>
+
+  <!-- Success State (hidden initially) -->
+  <div id="success-state" class="hidden mt-8 text-center" style="animation: fade-in 0.5s;">
+    <div style="font-size:4rem;color:var(--color-primary);margin-bottom:1rem;">✅</div>
+    <h2 class="font-bold text-2xl" style="color:var(--color-primary);">Payment Successful!</h2>
+    <p class="text-muted mt-2">Thank you for keeping our city clean.</p>
+    <button class="btn btn-outline w-full mt-6" onclick="window.print()">Download PDF Receipt</button>
+    <button class="btn btn-primary w-full mt-4" onclick="window.location.hash='#/'">Back to Home</button>
+  </div>
+
+  <div class="mt-8" id="pay-action">
+    <button class="btn btn-primary w-full" style="padding:16px;font-size:1.1rem;box-shadow: 0 4px 14px 0 rgba(22, 163, 74, 0.39);" id="pay-now-btn">Pay ₦765 Now</button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+/* Collector specific styles */
+.collector-status {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+.collector-status.offline {
+  background-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+.collector-status.online {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+}
+.stat-card .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
